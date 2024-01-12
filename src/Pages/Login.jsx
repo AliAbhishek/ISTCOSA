@@ -191,7 +191,7 @@ function Login() {
               </div>
             </div>
           </div>
-          <p className="text-[#680d0d] text-end m-5">Created by : Abhishek Ali(React Developer)</p>
+          <p className="text-[#680d0d] text-end m-5">Created by : Abhishek Ali</p>
         </section>
       </div>
     </div>
