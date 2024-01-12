@@ -191,7 +191,7 @@ function Login() {
               </div>
             </div>
           </div>
-          <p className="text-[#680d0d] text-end m-5">Created by : Abhishek Ali</p>
+          <p className="text-[#680d0d] text-end m-5">Created by :</p>
         </section>
       </div>
     </div>
