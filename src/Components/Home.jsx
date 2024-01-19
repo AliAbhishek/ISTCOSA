@@ -5,10 +5,12 @@ import { Navigate, Outlet, useLocation } from "react-router-dom";
 import Footer from "./Footer";
 import { RiUserFollowFill } from "react-icons/ri";
 import UseWindowResizeHook from "./GlobalComponent/UseWindowResizeHook";
+import { useSelector } from "react-redux";
 
 function Home() {
   const [sdbar, setsdbar] = useState(true);
   const { height, width } = UseWindowResizeHook();
+  let value= useSelector((state)=>(state.ThemeReducer))
 
   useEffect(() => {
     if (width < 1150) {
@@ -39,18 +41,20 @@ function Home() {
         />
       </div>
       <div className="flex   ">
+        <div className={`${value.themeValue?"bg-black text-white":"bg-white"}`}>
         <Sidebar
           handlesidebar={handlesidebar}
           sdbar={sdbar}
           setsdbar={setsdbar}
         />
+        </div>
 
         
 
         <div
           className={`${
             sdbar ? "w-4/5" : "w-full"
-          } right-0 md:top-16 top-16 absolute  `}
+          } ${value.themeValue?"bg-black text-white":"bg-white"} right-0 md:top-16 top-16 absolute  `}
         >
           <Outlet />
         </div>

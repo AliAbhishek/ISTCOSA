@@ -4,11 +4,19 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getdashboard } from "../utils/api/Dashboardapi";
 import UseWindowResizeHook from "../Components/GlobalComponent/UseWindowResizeHook";
+import { IoMdMoon, IoMdSunny } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import { themeValue } from "../Slice";
 
 function Dashboard() {
   const { height, width } = UseWindowResizeHook();
   const [alldata, setalldata] = useState([]);
   const [size, setsize] = useState(false);
+
+ 
+
+ 
+  
 
   useEffect(() => {
     if (width < 1150) {
@@ -19,18 +27,23 @@ function Dashboard() {
     }
   }, [width]);
 
- 
-
   useEffect(() => {
     getdashboard().then((res) => setalldata(res));
   }, []);
+
   
 
   return (
-    <div className="m-8 ">
+    <div className="m-8">
       <ToastContainer />
       <div className="flex  items-center justify-between ">
         <div className=" text-3xl font-semibold text-[#680d0d]">Dashboard</div>
+        <div
+          className="text-lg
+        "
+        >
+          
+        </div>
       </div>
       <div className="grid grid-flow-row gap-4 sm:grid-cols-2 lg:grid-cols-4 ">
         <div className="mt-10 flex-gap-2">

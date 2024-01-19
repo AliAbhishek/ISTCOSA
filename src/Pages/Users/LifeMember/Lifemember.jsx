@@ -10,10 +10,13 @@ import MembershipPopup from "../../../Components/GlobalComponent/UserGlobalCompo
 import ProfessionalDetails from "../../../Components/GlobalComponent/UserGlobalComponents/ProfessionalDetails";
 import MarkObituaryPopUp from "../../../Components/GlobalComponent/UserGlobalComponents/MarkObituaryPopUp";
 import UserPagination from "../UserPagination";
+import { useSelector } from "react-redux";
 
 const Lifemember = (props) => {
   const [lifemembers, setlifemembers] = useState([]);
   const [flag, setflag] = useState(false);
+  
+  
   const [page,setpage] =useState(1)
   const changepage = (p) => {
     setpage(p);

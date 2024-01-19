@@ -18,11 +18,13 @@ import {
   IoIosArrowForward,
   IoIosArrowUp,
 } from "react-icons/io";
+import { useSelector } from "react-redux";
 
 function Sidebar({ sdbar }) {
   const navigate = useNavigate();
   const [commantype, setcommantype] = useState(true);
- 
+ let value =useSelector((state)=>state.ThemeReducer)
+ console.log(value)
 
    const location = useLocation()
    let path = (location.pathname)
@@ -35,9 +37,9 @@ function Sidebar({ sdbar }) {
     <div
       className={`${
         sdbar ? "w-2/5 " : "hidden"
-      }  w-64 fixed float-left top-16  overflow-y-scroll no-scrollbar bottom-0 bg-white border  left-0  z-10 `}
+      }  w-64 fixed float-left top-16  overflow-y-scroll no-scrollbar bottom-0 border  left-0  z-10 ${value.themeValue?"bg-black":"bg-white"} `}
     >
-      <div className=" shadow-md h-[120px] border flex justify-between items-center pt-3 px-2 gap-2   ">
+      <div className=" shadow-md h-[120px] border  flex justify-between items-center pt-3 px-2 gap-2   ">
         <div className="">
           <img className="min-h-14 bg-contain" src={logo1} alt="logo1" />
         </div>

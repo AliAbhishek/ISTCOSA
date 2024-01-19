@@ -10,6 +10,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import GlobalButton from "../Components/GlobalComponent/GlobalButton";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { IoMdMoon, IoMdSunny } from "react-icons/io";
 
 function Batches() {
   const [batchList, setbatchList] = useState([]);
@@ -18,6 +21,11 @@ function Batches() {
   const [hover, sethover] = useState(true);
   const [search, setsearch] = useState("");
   const [flag, setflag] = useState(false);
+
+
+
+ 
+
 
   const [itemperpage, setitemperpage] = useState(10);
 
@@ -42,7 +50,7 @@ function Batches() {
 
 
 
-  useEffect(() => {
+  useEffect (() => {
     getbatches().then((res) =>
       setbatchList(res.filter((item) => item.Active === true))
     );
@@ -88,6 +96,13 @@ function Batches() {
             <div className=" text-3xl font-semibold text-[#680d0d]">
               Batches
             </div>
+            <div
+          className="text-lg
+        "
+        >
+          
+          
+        </div>
             <div>
               <div className=" text-2xl  text-[#680d0d]">
                 <AddBatchespopup flag={flag} setflag={setflag} />

@@ -2,10 +2,13 @@ import React, { memo, useEffect, useState } from "react";
 import { BiFirstPage, BiLastPage } from "react-icons/bi";
 
 import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
+import { useSelector } from "react-redux";
 
 function Pagination(props) {
   let pages = [];
   console.log("pagination")
+  let value =useSelector((state)=>state.ThemeReducer)
+ console.log(value)
   
 
   for (
